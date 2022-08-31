@@ -31,7 +31,8 @@ function compra() {
     <div className='producto'>  
       <h3>{nombre}</h3>
       <p>{descripcion}</p>
-      <h5>En Stock:<span>{itemsStock}</span></h5>
+      <h5>En Stock: {(itemsStock>0)? itemsStock: <span> AGOTADO</span>}
+        </h5>
       <button onClick={() => compra()} disabled={itemsStock<=0} 
       > {itemsStock > 0 ? "Puedes comprar" : "No hay inventario"} </button>
     </div>
